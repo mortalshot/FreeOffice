@@ -105,18 +105,6 @@ function js() {
 	return src(path.src.js)
 		.pipe(fileinclude())
 		.pipe(dest(path.build.js))
-		.pipe(
-			babel({
-				presets: ['@babel/env']
-			})
-		)
-		.pipe(
-			rename({
-				extname: ".es5.js"
-			})
-		)
-		.pipe(dest(path.build.js))
-
 		.pipe(src(path.src.js))
 		.pipe(fileinclude())
 		.pipe(

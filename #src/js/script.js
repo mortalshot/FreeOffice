@@ -1,3 +1,16 @@
+@@include('jquery/jquery-3.5.1.min.js')
+
+function ibg() {
+
+	$.each($('.ibg'), function (index, val) {
+		if ($(this).find('img').length > 0) {
+			$(this).css('background-image', 'url("' + $(this).find('img').attr('src') + '")');
+		}
+	});
+}
+
+ibg();
+
 function testWebP(callback) {
 
 	var webP = new Image();
@@ -16,3 +29,4 @@ testWebP(function (support) {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
+
